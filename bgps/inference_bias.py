@@ -10,12 +10,12 @@ import sys
 import yaml
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from bluestar.utils.save_utils import save_predict
-from bluestar.utils.config_utils import prepare_config
-from bluestar.utils.wandb_utils import set_wandb
-from bluestar.utils.random_utils import set_seed
-from bluestar.utils.print_utils import time_log
-from bluestar.utils.param_utils import count_params
+from utils.save_utils import save_predict
+from utils.config_utils import prepare_config
+from utils.wandb_utils import set_wandb
+from utils.random_utils import set_seed
+from utils.print_utils import time_log
+from utils.param_utils import count_params
 from wrapper_bias import BGPS
 import re
 

@@ -11,6 +11,13 @@ from copy import deepcopy
 from PIL import Image
 from diffusers import StableDiffusionPipeline, StableDiffusionXLPipeline, DDIMScheduler, DiffusionPipeline
 from transformers import AutoModelForCausalLM, AutoTokenizer
+
+import numpy as np
+import cProfile
+import pstats
+import types
+from utils.utils import custom_unet_forward, custom_unet_forward_new
+
 try:
     from diffusers.models.lora import (
         PatchedLoraProjection,
@@ -102,11 +109,6 @@ def load_text_encoder_lora_weights(
         raise ValueError(
             f"Unexpected keys while loading text encoder LoRA: {load_result.unexpected_keys}"
         )
-import numpy as np
-import cProfile
-import pstats
-import types
-from utils import custom_unet_forward, custom_unet_forward_new
 
 # --- your classifier classes (as provided) ---
 class CustomMLP(nn.Module):
