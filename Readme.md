@@ -1,18 +1,6 @@
 # Buias-Guided Prompt Search (BGPS)
 
-
-
 Official repository for the paper "Exposing Hidden Biases in Text-to-Image Models via Automated Prompt Search" (Accepted at the ICLR 2026 Workshop for Algorithmic Fairness Across Alignment Procedures and Agentic Systems).
-<!-- 
-<p align="center">
-  <img src="./figure1.png" alt="Figure 1" width="600"/>
-</p>
-
-* While conventional prompt inversion techniques update prompt embeddings through gradient-based optimization and quantization, VGD is a gradient-free technique that utilizes large language models and CLIP to generate relevant sentences.
-
-<p align="center">
-  <img src="./figure2.png" alt="Figure 2" width="600"/>
-</p> -->
 
 ---
 
@@ -45,15 +33,12 @@ pip install -r requirements.txt
 To run inference:
 
 ```bash
-cd bgps
-python ./inference_bias.py --config ./config/{taskname}.yaml
+python ./bgps/inference_bias.py --config ./bgps/config/{taskname}.yaml
 ```
 
 - Replace `{taskname}` with the name of the YAML config for your desired task.
-- See `./bgps/run.sh` for example CLI commands used in our experiments.
 
 ---
-
 
 This repository is based on the [VGD repository](https://github.com/DonghoonKim-1938/VGD).
 
